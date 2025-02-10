@@ -1,0 +1,48 @@
+name: M3U8 yigeip
+
+on:
+  #schedule:
+    #- cron: '0 14 * * *'  # 每天 UTC 时间 14:00（北京时间 22:00）运行
+  workflow_dispatch:  # 允许手动触发任务
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 获取完整 Git 历史，确保可推送更改
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 运行扫描
+        run: python scan_yigeip.py
+
+      - name: 提交并推送结果到 GitHub
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    
+          # 仅当有更改时才提交
+          if [[ `git status --porcelain` ]]; then
+            git add valid_yigeip_urls.txt
+            git commit -m "更新文件 [$(date '+%Y-%m-%d %H:%M:%S')]"
+          else
+            echo "没有更改需要提交"
+          fi
+    
+          # 拉取远程代码，并进行 rebase
+          git pull --rebase
+    
+          # 推送更改
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/suanjin1/yunxin.git HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
