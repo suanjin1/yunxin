@@ -6,8 +6,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 配置参数
 TARGET_URL_TEMPLATE = "https://apiappdyyztvyydsqwdy.68.gy:{}/api.php/getappapi.index/vodDetail"
-START_PORT = 5689  # 起始端口
-END_PORT = 5690  # 结束端口
+START_PORT = 1  # 起始端口
+END_PORT = 9999  # 结束端口
 THREAD_COUNT = 100  # 并发线程数（可以根据网络情况调整）
 
 # AES 解密函数
