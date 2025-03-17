@@ -1,7 +1,6 @@
-name: M3U8 Scanner
+name: appsmdk Scanner
 
 on:
-  schedule:
 
   workflow_dispatch:  # 允许手动触发任务
 
