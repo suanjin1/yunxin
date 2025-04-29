@@ -10,7 +10,7 @@ PORT_END = 35455                   # 结束端口
 THREAD_COUNT = 100                 # 并发线程数
 
 # M3U8 文件 URL 模板
-M3U8_URL_TEMPLATE = "http://{}:{}/gaoma/cctv1.m3u8"
+M3U8_URL_TEMPLATE = "http://{}:{}/bptv/10000100000000050000000003864351.m3u8"
 # 存储有效 M3U8 URL 的文件
 OUTPUT_FILE = "valid_m3u8_urls.txt"
 
