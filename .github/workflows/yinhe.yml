@@ -25,7 +25,7 @@ jobs:
         run: pip install requests
 
       - name: 运行扫描
-        run: python scan_m3u8.py
+        run: python yinhe_m3u8.py
 
       - name: 提交并推送结果到 GitHub
         run: |
