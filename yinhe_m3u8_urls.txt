@@ -1,1 +1,2 @@
-
+http://120.232.24.124/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/G_CCTV-1-HD-265-8M/G_CCTV-1-HD-265-8M.m3u8
+http://120.232.58.225/snctcc-tvod.tx-cdn.gitv.tv/gitv_live/G_CCTV-1-HD-265-8M/G_CCTV-1-HD-265-8M.m3u8
