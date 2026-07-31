@@ -2,6 +2,7 @@ name: M3U8 yinhe
 
 on:
   schedule:
+    # 注释掉的cron任务，如果需要启用，删除前面的#号即可
     # - cron: '0 0 */2 * *'  # 每两天的午夜12点（UTC时间）运行
     # - cron: '0 14 * * *'  # 每天 UTC 时间 14:00（北京时间 22:00）运行
   workflow_dispatch:  # 允许手动触发任务
